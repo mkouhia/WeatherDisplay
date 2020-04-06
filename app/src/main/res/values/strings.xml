@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WeatherDisplay</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="helloText">Hello, I am a TextView</string>
+    <string name="mainForecastIcon">Main forecast icon</string>
+    <string name="mainForecastTemp">NA °C</string>
+
+    <string name="title_activity_fullscreen2">FullscreenActivity2</string>
+</resources>
