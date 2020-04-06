@@ -5,21 +5,72 @@
     android:id="@+id/fullscreen_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
+    android:background="@android:color/background_dark"
     tools:context=".FullscreenActivity">
 
+
+    <TextView
+        android:id="@+id/currentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/currentTime"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/currentDate"
+        app:layout_constraintStart_toEndOf="@+id/mainForecastTempDegC" />
+
+    <TextView
+        android:id="@+id/currentTemperature"
+        android:layout_width="19dp"
+        android:layout_height="wrap_content"
+        android:text="@string/currentTemperature"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/thermometerIcon2"
+        app:layout_constraintStart_toEndOf="@+id/thermometerIcon2"
+        app:layout_constraintTop_toBottomOf="@+id/currentTime" />
+
+    <TextView
+        android:id="@+id/currentTemperatureDegC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="@string/degreesC"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/currentTemperature"
+        app:layout_constraintStart_toEndOf="@+id/currentTemperature" />
+
+    <ImageView
+        android:id="@+id/thermometerIcon2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/thermometerDescription"
+        android:tint="@color/colorPrimary"
+        app:layout_constraintStart_toEndOf="@+id/mainForecastTempDegC"
+        app:layout_constraintTop_toBottomOf="@+id/currentTime"
+        app:srcCompat="@drawable/ic_wi_thermometer" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:contentDescription="@string/mainForecastIcon"
+        android:contentDescription="@string/mainForecastDescription"
         android:tint="@color/colorPrimary"
         app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHeight_percent="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.4"
         app:srcCompat="@drawable/ic_wi_cloudy" />
+
+    <TextView
+        android:id="@+id/currentDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/currentDate"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
@@ -32,14 +83,14 @@
         app:layout_constraintTop_toBottomOf="@+id/currentDate" />
 
     <TextView
-        android:id="@+id/currentDate"
+        android:id="@+id/mainForecastTempDegC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/currentDate"
+        android:layout_marginStart="4dp"
+        android:text="@string/degreesC"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="165dp" />
-
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
