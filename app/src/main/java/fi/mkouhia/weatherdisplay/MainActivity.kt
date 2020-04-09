@@ -195,7 +195,8 @@ class MainActivity : AppCompatActivity() {
         )
 
         // Plus one
-        val plusOneTime = localDateTime.plusDays(1).withHour(6).withMinute(0).withSecond(0)
+        val plusOneTime = localDateTime.plusDays(1).withHour(6)
+            .withMinute(0).withSecond(0).withNano(0)
         val plusOneTimeStep = forecast.properties.timeseries.find { ts -> ts.localDateTime >= plusOneTime }
         renderForecast(
             plusOneTimeStep,
