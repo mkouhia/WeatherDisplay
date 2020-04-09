@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.Response
+import com.android.volley.VolleyError
 import com.github.mikephil.charting.charts.CombinedChart
 import com.github.mikephil.charting.components.Description
 import com.github.mikephil.charting.components.XAxis
@@ -20,7 +21,7 @@ import fi.mkouhia.weatherdisplay.model.ForecastTimeStep
 import fi.mkouhia.weatherdisplay.model.MetJsonForecast
 import fi.mkouhia.weatherdisplay.model.ForecastTimePeriod
 import kotlinx.android.synthetic.main.activity_fullscreen.*
-import org.slf4j.LoggerFactory
+import mu.KLogging
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.format.DateTimeFormatter
 import org.threeten.bp.format.TextStyle
@@ -157,7 +158,7 @@ class MainActivity : AppCompatActivity() {
                 metJsonForecast = response
                 renderForecast(response)
             },
-            Response.ErrorListener { println("error?") })
+            Response.ErrorListener { error: VolleyError? -> logger.error("Met request error", error) })
 
         RequestQueueSingleton.getInstance(this).addToRequestQueue(request);
     }
@@ -292,6 +293,9 @@ class MainActivity : AppCompatActivity() {
         period: ForecastTimePeriod?
     ) {
         val symbolName = period?.summary?.symbol_code
+
+        logger.debug { "Setting symbol $symbolName" }
+
         // TODO if returning, set NA images
 
         val weatherIconView: WeatherIconView? = findViewById(textWeatherIconViewId)
@@ -317,7 +321,6 @@ class MainActivity : AppCompatActivity() {
             }
 
             // Use met.no images, mapping directly from api symbol
-            println("Setting symbol $symbolName")
             val weatherIconName = "metno_$symbolName"
             val iconStringId = resources.getIdentifier(weatherIconName, "drawable", packageName)
             if (iconStringId == 0) {
@@ -575,7 +578,7 @@ class MainActivity : AppCompatActivity() {
 
         data class AxisSpec(val minimum : Float, val maximum : Float, val numLabels : Int, val spacing : Float = (maximum - minimum) / (numLabels-1))
 
-        val logger = LoggerFactory.getLogger(MainActivity::class.java)
+        val logger = KLogging().logger
 
     }
 
