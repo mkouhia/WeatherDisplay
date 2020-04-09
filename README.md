@@ -16,4 +16,3 @@
 - Wind speed symbols: [Wikimedia](https://commons.wikimedia.org/wiki/Wind_speed), public domain
 
 # Open source libraries
-- [Meteo](https://github.com/lazee/meteo) Java library/client for [https://api.met.no]()

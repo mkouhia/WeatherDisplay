@@ -5,7 +5,6 @@ import com.android.volley.toolbox.HttpHeaderParser
 import fi.mkouhia.weatherdisplay.model.MetJsonForecast
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
-import no.api.meteo.client.MeteoClientException
 import org.json.JSONException
 import java.io.UnsupportedEncodingException
 import java.nio.charset.Charset
@@ -25,10 +24,17 @@ class MeteoRequest(
         return params
     }
 
-
-    override fun parseNetworkResponse(response: NetworkResponse?): Response<MetJsonForecast> {
+    /**
+     * Subclasses must implement this to parse the raw network response and return an appropriate
+     * response type. This method will be called from a worker thread. The response will not be
+     * delivered if you return null.
+     *
+     * @param response Response from the network
+     * @return The parsed response, or null in the case of an error
+     */
+    override fun parseNetworkResponse(response: NetworkResponse?): Response<MetJsonForecast>? {
         if (response == null) {
-            throw MeteoClientException("Network response is null")
+            return null
         }
         return try {
             println("Parsing meteo response to objects")
