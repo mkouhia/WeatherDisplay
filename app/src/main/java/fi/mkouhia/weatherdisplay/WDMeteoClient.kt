@@ -38,17 +38,19 @@ class WDMeteoClient(context : Context) : MeteoClient {
      * @throws MeteoClientException If invalid url or content couldn't be fetched.
      */
     override fun fetchContent(uri: URI): MeteoResponse {
-        log.debug("Going to fetch content from : %", uri.toString());
+        println("Going to fetch content from: $uri")
 
-        val future : RequestFuture<MeteoResponse> = RequestFuture.newFuture();
-        val request = MeteoRequest(Request.Method.GET, uri.toString(), future, future);
-        requestQueue.add(request);
+        val future : RequestFuture<no.api.meteo.client.MeteoResponse> = RequestFuture.newFuture();
+//        val request = MeteoRequest(Request.Method.GET, uri.toString(), future, future);
+//        requestQueue.add(request);
 
         return try {
             future.get()
         } catch (e: InterruptedException) {
+            println("int")
             throw MeteoClientException("Interrupted", e)
         } catch (e: ExecutionException) {
+            println("exc")
             throw MeteoClientException("Exception encountered", e)
         }
     }

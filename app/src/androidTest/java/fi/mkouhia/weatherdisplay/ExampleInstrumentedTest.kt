@@ -32,6 +32,7 @@ class ExampleInstrumentedTest {
         val latitude = 60.0
         val longitude = 25.0
         val altitude = 17
+        println("lol?")
 
         val meteoClient = WDMeteoClient(InstrumentationRegistry.getInstrumentation().targetContext)
 
@@ -40,7 +41,9 @@ class ExampleInstrumentedTest {
 
         val service = LocationForecastService(meteoClient)
         try {
+            println("moi?")
             val data : MeteoData<LocationForecast> = service.fetchContent(latitude, longitude, altitude)
+            println("data?")
             println(data.result.meta)
             println(data.result.location)
             for (f in data.result.forecasts) {

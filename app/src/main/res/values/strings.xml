@@ -2,16 +2,32 @@
     <string name="app_name">WeatherDisplay</string>
 
 <!--    UI description -->
-    <string name="mainForecastDescription">Main forecast icon</string>
     <string name="thermometerDescription">Temperature</string>
 
 <!--    Strings that are set in scripts-->
-    <string name="mainForecastTemp">NA</string>
-    <string name="currentTemperature">NA</string>
-    <string name="currentDate">su 5.4.</string>
-    <string name="currentTime">23.34</string>
+    <string name="mainForecastDescription">Poutaa</string>
+    <string name="dayPlusOneForecastDescription">Poutaa, iltaa kohti alkavaa sadetta</string>
+    <string name="dayPlusTwoForecastDescription">Aurinkoista, illasta alkaen pilvistä</string>
+    <string name="mainForecastTemp">20</string>
+    <string name="currentTemperature">18</string>
+    <string name="currentDate">24.7.</string>
+    <string name="currentTime">14.07</string>
+    <string name="dayNameCurrent">tiistai</string>
+    <string name="forecastPlusOneName">ke ap</string>
+    <string name="forecastPlusTwoName">ke ip</string>
+    <string name="forecastPlusThreeName">torstai</string>
+    <string name="forecastPlusOneTemps">11/21</string>
+    <string name="forecastPlusTwoTemps">14/22</string>
+    <string name="forecastPlusThreeTemps">13/20</string>
+    <string name="mainForecastWindDescription">tuuli 7 m/s W</string>
+    <string name="dayPlusOneForecastWindDescription">tuuli 7 m/s W</string>
 
 <!--    Other strings-->
     <string name="degreesC">°C</string>
+    <string name="tempDegC">%.0f&#x2009;°C</string>
+    <string name="tempDegCRange">%.0f/%.0f&#x2009;°C</string>
+    <string name="mmh">mm/h</string>
+    <string name="defaultWeatherSymbol">&#xf005;</string>
+    <string name="dataSourceDeclaration">Data from MET Norway</string>
 
 </resources>

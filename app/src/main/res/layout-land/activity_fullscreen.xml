@@ -6,91 +6,349 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/background_dark"
-    tools:context=".FullscreenActivity">
+    tools:context=".MainActivity">
 
+
+    <ImageView
+        android:id="@+id/forecastPlusTwoWindArrow"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:contentDescription="@string/dayPlusOneForecastWindDescription"
+        android:tint="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/forecastPlusTwoTemps"
+        app:layout_constraintStart_toStartOf="@+id/forecastPlusTwoTemps"
+        app:layout_constraintTop_toBottomOf="@+id/forecastPlusTwoTemps"
+        app:srcCompat="@drawable/ic_symbol_wind_speed_0kt" />
+
+    <TextView
+        android:id="@+id/forecastPlusTwoTemps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/forecastPlusTwoTemps"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toEndOf="@+id/forecastPlusTwoIcon"
+        app:layout_constraintTop_toBottomOf="@+id/forecastPlusTwoName" />
+
+    <com.github.pwittchen.weathericonview.WeatherIconView
+        android:id="@+id/forecastPlusThreeIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/dayPlusTwoForecastDescription"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/forecastPlusOneIcon"
+        app:layout_constraintStart_toStartOf="@+id/forecastPlusOneIcon"
+        app:layout_constraintTop_toBottomOf="@+id/forecastPlusTwoIcon"
+        app:weatherIconColor="@color/colorPrimary"
+        app:weatherIconResource="@string/defaultWeatherSymbol"
+        app:weatherIconSize="50" />
+
+    <TextView
+        android:id="@+id/forecastPlusThreeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/forecastPlusThreeName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/forecastPlusThreeIcon"
+        app:layout_constraintEnd_toEndOf="@+id/forecastPlusThreeIcon"
+        app:layout_constraintStart_toStartOf="@+id/forecastPlusThreeIcon" />
+
+    <TextView
+        android:id="@+id/forecastPlusThreeTemps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/forecastPlusThreeTemps"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toEndOf="@+id/forecastPlusThreeIcon"
+        app:layout_constraintTop_toBottomOf="@+id/forecastPlusThreeName" />
+
+    <ImageView
+        android:id="@+id/forecastPlusThreeWindArrow"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:contentDescription="@string/dayPlusOneForecastWindDescription"
+        android:tint="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/forecastPlusThreeTemps"
+        app:layout_constraintStart_toStartOf="@+id/forecastPlusThreeTemps"
+        app:layout_constraintTop_toBottomOf="@+id/forecastPlusThreeTemps"
+        app:srcCompat="@drawable/ic_symbol_wind_speed_0kt" />
+
+    <TextView
+        android:id="@+id/forecastPlusTwoName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/forecastPlusTwoName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/forecastPlusTwoIcon"
+        app:layout_constraintEnd_toEndOf="@+id/forecastPlusTwoIcon"
+        app:layout_constraintStart_toStartOf="@+id/forecastPlusTwoIcon" />
+
+    <com.github.pwittchen.weathericonview.WeatherIconView
+        android:id="@+id/forecastPlusTwoIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/dayPlusTwoForecastDescription"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/forecastPlusThreeIcon"
+        app:layout_constraintEnd_toEndOf="@+id/forecastPlusOneIcon"
+        app:layout_constraintStart_toStartOf="@+id/forecastPlusOneIcon"
+        app:layout_constraintTop_toBottomOf="@+id/forecastPlusOneIcon"
+        app:weatherIconColor="@color/colorPrimary"
+        app:weatherIconResource="@string/defaultWeatherSymbol"
+        app:weatherIconSize="50" />
+
+    <TextView
+        android:id="@+id/forecastPlusOneName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/forecastPlusOneName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/forecastPlusOneIcon"
+        app:layout_constraintEnd_toEndOf="@+id/forecastPlusOneIcon"
+        app:layout_constraintStart_toStartOf="@+id/forecastPlusOneIcon" />
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/dayPlusOneForecastIcon2"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_marginEnd="60dp"-->
+    <!--        android:contentDescription="@string/mainForecastDescription"-->
+    <!--        android:tint="@color/colorPrimary"-->
+    <!--        app:layout_constraintDimensionRatio="1:1"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHeight_percent="0.25"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/dayNamePlusOne"-->
+    <!--        app:srcCompat="@drawable/ic_wi_cloudy" />-->
+
+    <RelativeLayout
+        android:id="@+id/forecastPlusOneIcon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHeight_percent="0.22"
+        app:layout_constraintBottom_toTopOf="@+id/forecastPlusTwoIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="75dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/forecastPlusOneIconImg"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/dayPlusOneForecastDescription"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_wi_cloudy" />
+
+        <com.github.pwittchen.weathericonview.WeatherIconView
+            android:id="@+id/forecastPlusOneIconText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:weatherIconColor="@color/colorPrimary"
+            app:weatherIconResource="@string/defaultWeatherSymbol"
+            app:weatherIconSize="50" />
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/currentTime"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:text="@string/currentTime"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/currentDate"
-        app:layout_constraintStart_toEndOf="@+id/mainForecastTempDegC" />
+        app:layout_constraintBottom_toBottomOf="@+id/dayNameCurrent"
+        app:layout_constraintStart_toEndOf="@+id/mainForecastWindArrow" />
 
     <TextView
         android:id="@+id/currentTemperature"
-        android:layout_width="19dp"
-        android:layout_height="wrap_content"
-        android:text="@string/currentTemperature"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/thermometerIcon2"
-        app:layout_constraintStart_toEndOf="@+id/thermometerIcon2"
-        app:layout_constraintTop_toBottomOf="@+id/currentTime" />
-
-    <TextView
-        android:id="@+id/currentTemperatureDegC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:text="@string/degreesC"
+        android:layout_marginStart="4dp"
+        android:text="@string/currentTemperature"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/currentTemperature"
-        app:layout_constraintStart_toEndOf="@+id/currentTemperature" />
+        app:layout_constraintBottom_toBottomOf="@+id/currentTime"
+        app:layout_constraintStart_toEndOf="@+id/thermometerIcon" />
 
-    <ImageView
-        android:id="@+id/thermometerIcon2"
+    <!--    <ImageView-->
+    <!--        android:id="@+id/thermometerIcon"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:contentDescription="@string/thermometerDescription"-->
+    <!--        android:tint="@color/colorPrimary"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/mainForecastTempDegC"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/currentTime"-->
+    <!--        app:srcCompat="@drawable/ic_wi_thermometer" />-->
+
+    <TextView
+        android:id="@+id/chartTempLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/degreesC"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/weatherChart"
+        app:layout_constraintStart_toStartOf="@+id/weatherChart"
+        app:layout_constraintTop_toTopOf="@+id/weatherChart" />
+
+    <TextView
+        android:id="@+id/chartPrecipLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mmh"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/weatherChart"
+        app:layout_constraintEnd_toEndOf="@+id/weatherChart"
+        app:layout_constraintTop_toTopOf="@+id/weatherChart"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.github.pwittchen.weathericonview.WeatherIconView
+        android:id="@+id/thermometerIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:contentDescription="@string/thermometerDescription"
-        android:tint="@color/colorPrimary"
-        app:layout_constraintStart_toEndOf="@+id/mainForecastTempDegC"
-        app:layout_constraintTop_toBottomOf="@+id/currentTime"
-        app:srcCompat="@drawable/ic_wi_thermometer" />
+        android:text="@string/wi_thermometer"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/currentTime"
+        app:layout_constraintStart_toEndOf="@+id/currentTime"
+        app:layout_constraintTop_toTopOf="@+id/currentTime"
+        app:weatherIconColor="@color/colorPrimary"
+        app:weatherIconResource="@string/wi_thermometer"
+        app:weatherIconSize="14" />
 
-    <ImageView
-        android:id="@+id/imageView"
+    <RelativeLayout
+        android:id="@+id/mainForecastIcon"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:contentDescription="@string/mainForecastDescription"
-        android:tint="@color/colorPrimary"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintHeight_percent="0.30"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_wi_cloudy" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/mainForecastIconImg"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/mainForecastDescription"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_wi_cloudy" />
+
+        <com.github.pwittchen.weathericonview.WeatherIconView
+            android:id="@+id/mainForecastIconText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:weatherIconColor="@color/colorPrimary"
+            app:weatherIconResource="@string/defaultWeatherSymbol"
+            app:weatherIconSize="80" />
+
+    </RelativeLayout>
 
     <TextView
-        android:id="@+id/currentDate"
+        android:id="@+id/dayNameCurrent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
-        android:text="@string/currentDate"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/dayNameCurrent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/mainForecastIcon"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/mainForecastTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:text="@string/mainForecastTemp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/currentDate" />
+        app:layout_constraintStart_toEndOf="@+id/mainForecastIcon"
+        app:layout_constraintTop_toBottomOf="@+id/dayNameCurrent" />
+
+    <com.github.mikephil.charting.charts.CombinedChart
+        android:id="@+id/weatherChart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/forecastPlusOneIcon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainForecastIcon" />
+
+    <ImageView
+        android:id="@+id/mainForecastWindArrow"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/mainForecastWindDescription"
+        android:tint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/mainForecastTemp"
+        app:layout_constraintStart_toEndOf="@+id/mainForecastTemp"
+        app:layout_constraintTop_toBottomOf="@+id/dayNameCurrent"
+        app:srcCompat="@drawable/ic_symbol_wind_speed_0kt" />
+
+    <ImageView
+        android:id="@+id/forecastPlusOneWindArrow"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:contentDescription="@string/dayPlusOneForecastWindDescription"
+        android:tint="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/forecastPlusOneTemps"
+        app:layout_constraintStart_toStartOf="@+id/forecastPlusOneTemps"
+        app:layout_constraintTop_toBottomOf="@+id/forecastPlusOneTemps"
+        app:srcCompat="@drawable/ic_symbol_wind_speed_0kt" />
 
     <TextView
-        android:id="@+id/mainForecastTempDegC"
+        android:id="@+id/forecastPlusOneTemps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="@string/degreesC"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/forecastPlusOneTemps"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintStart_toEndOf="@+id/textView" />
+        app:layout_constraintStart_toEndOf="@+id/forecastPlusOneIcon"
+        app:layout_constraintTop_toBottomOf="@+id/forecastPlusOneName" />
+
+    <TextView
+        android:id="@+id/dataSourceDeclaration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dataSourceDeclaration"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="?android:attr/textColorSecondaryInverse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

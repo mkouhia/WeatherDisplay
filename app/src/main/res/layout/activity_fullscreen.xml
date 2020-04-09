@@ -6,40 +6,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/background_dark"
-    tools:context=".FullscreenActivity">
+    tools:context=".MainActivity">
 
-
-    <ImageView
+    <RelativeLayout
         android:id="@+id/mainForecastIcon"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/mainForecastDescription"
-        android:tint="@color/colorPrimary"
-        app:layout_constraintDimensionRatio="1:1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.4"
-        app:srcCompat="@drawable/ic_wi_cloudy" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/mainForecastIconImg"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/mainForecastDescription"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_wi_cloudy" />
+
+        <com.github.pwittchen.weathericonview.WeatherIconView
+            android:id="@+id/mainForecastIconText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:weatherIconColor="@color/colorPrimary"
+            app:weatherIconResource="@string/wi_na"
+            app:weatherIconSize="60" />
+
+    </RelativeLayout>
+
+
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/mainForecastTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/mainForecastTemp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toEndOf="@+id/mainForecastIcon"
-        app:layout_constraintTop_toBottomOf="@+id/currentDate" />
+        app:layout_constraintTop_toBottomOf="@+id/dayNameCurrent" />
 
     <TextView
-        android:id="@+id/currentDate"
+        android:id="@+id/dayNameCurrent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="@string/currentDate"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toEndOf="@+id/mainForecastIcon"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/mainForecastIcon" />
 
     <TextView
         android:id="@+id/currentTime"
@@ -64,37 +81,16 @@
 
     <TextView
         android:id="@+id/currentTemperature"
-        android:layout_width="19dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/currentTemperature"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/currentTime"
         app:layout_constraintStart_toEndOf="@+id/thermometerIcon" />
 
-    <TextView
-        android:id="@+id/mainForecastTempDegC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="@string/degreesC"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintStart_toEndOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/currentTemperatureDegC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:text="@string/degreesC"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/currentTime"
-        app:layout_constraintStart_toEndOf="@+id/currentTemperature" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="409dp"
-        android:layout_height="540dp"
+        android:layout_height="440dp"
         android:layout_marginTop="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
